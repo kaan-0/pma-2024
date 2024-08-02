@@ -1,0 +1,117 @@
+<!-- <ion-header>
+  <ion-toolbar class="fondo-header">
+      <ion-buttons slot="start">
+          <ion-menu-button color="light" menu="menuPrincipal"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+          <ion-label >Consulta con datos</ion-label>
+      </ion-title>
+      <img slot="end" src="assets/principal.png" height="40px" style="padding-right:5px;" />
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  informacion de la estacion seleccionada: {{id}}
+</ion-content> -->
+
+<ion-header>
+    <ion-toolbar class="fondo-header">
+        <ion-buttons slot="start">
+            <ion-menu-button  menu="menuPrincipal"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            <ion-label >{{estaciones.nombre}}</ion-label>
+        </ion-title>
+        <img slot="end" src="assets/principal.png" height="40px" style="padding-right:5px;" />
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-row class="ion-justify-content-center ion-padding-top">
+            <ion-col class="ion-text-center">
+                <div>
+                    <img width="60px" src="assets/iconos/sol.png" alt="">
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row class="ion-justify-content-center">
+            <ion-col class="ion-text-center">
+                <h1 class="ion-no-margin">{{estacion[0].temperatura/10}} °C</h1>
+            </ion-col>
+        </ion-row>
+        <ion-row class="ion-justify-content-center ion-padding-bottom">
+            <ion-col class="ion-no-margin ion-text-center">
+                <p class="ion-no-margin" style="font-size:14px;">{{estaciones.depto}}</p>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col>
+                <div class="ion-text-center" style="background:cornflowerblue; border-radius : 20px; padding:8px;">
+                    <ion-text color="light">
+                        <p style="font-size:15px;" class="ion-margin">Velocidad del viento</p>
+                    </ion-text>
+                    <img width="50px" src="assets/iconos/viento.png" alt="">
+                    <ion-text color="light">
+                        <p style="font-size:15px;" class="ion-margin">{{estacion[0].velocidad_viento/10}} m/s</p>
+                    </ion-text>
+                </div>
+            </ion-col>
+            <ion-col class="ion-text-center">
+                <div class="ion-text-center" style="background:#7bb96b; border-radius : 20px; padding:8px;">
+                    <ion-text color="light">
+                        <p style="font-size:15px;" class="ion-margin">Humedad ambiente</p>
+                    </ion-text>
+                    <img width="50px" src="assets/iconos/humedad.png" alt="">
+                    <ion-text color="light">
+                        <p style="font-size:15px;" class="ion-margin">{{estacion[0].humedad/10}}%</p>
+                    </ion-text>
+                </div>
+            </ion-col>
+            <ion-col class="ion-text-center">
+                <div class="ion-text-center" style="background:#a89d55; border-radius : 20px; padding:8px;">
+                    <ion-text color="light">
+                        <p style="font-size:15px;" class="ion-margin">Humedad del suelo</p>
+                    </ion-text>
+                    <img width="50px" src="assets/iconos/suelo.png" alt="">
+                    <ion-text color="light">
+                        <p style="font-size:15px;" class="ion-margin">{{estacion[0].humedad_suelo/10}}%</p>
+                    </ion-text>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row class="ion-justify-content-center" style="background:#2de2db; border-radius : 20px; margin:10px 5px;">
+            <ion-col>
+                <ion-text color="light">
+                    <p style="font-size:14px; margin-bottom: 0">Salida del sol {{salidaSol}}</p>
+                    <img width="50px" src="assets/iconos/nube.png" alt="">
+                </ion-text>
+            </ion-col>
+            <ion-col>
+                <img width="100px" src="assets/iconos/nubes.png" alt="">
+            </ion-col>
+            <ion-col class="ion-no-margin">
+                <img width="70px" src="assets/iconos/amanecer.png" alt="">
+            </ion-col>
+        </ion-row>
+        <ion-row class="ion-justify-content-center" style="background:#496bb3; border-radius : 20px; margin:10px 5px; padding:0;">
+            <ion-col>
+                <ion-text color="light"> 
+                    <p style="font-size:14px; margin-bottom: 0">Puesta del sol {{puestaSol}}</p>
+                    <img width="50px" src="assets/iconos/nube.png" alt="">
+                </ion-text>
+            </ion-col>
+            <ion-col>
+                <img width="100px" src="assets/iconos/nubes.png" alt="">
+            </ion-col>
+            <ion-col class="ion-no-margin">
+                <img width="70px" src="assets/iconos/atardecer.png" alt="">
+            </ion-col>
+            
+        </ion-row>
+    </ion-card>
+
+
+   
+</ion-content>

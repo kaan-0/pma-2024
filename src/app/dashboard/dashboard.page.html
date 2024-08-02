@@ -1,0 +1,109 @@
+<ion-header>
+  <ion-toolbar class="fondo-header">
+      <ion-buttons slot="start">
+          <ion-menu-button color="light" menu="menuPrincipal"></ion-menu-button>
+      </ion-buttons>
+      <ion-title style="color:#fff;">C&D tecHNología</ion-title>
+      <img slot="end" src="assets/principal.png" height="40px" style="padding-right:5px;" />
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-card class="ion-padding fondo-cards-dash" *ngFor="let estacion of estaciones">
+    <ion-row>
+        <ion-col>
+            <ion-row class="ion-justify-content-center ion-no-padding">
+                <ion-col>
+                    <ion-row>
+                        <ion-col class="ion-text-center">
+                            <ion-text>
+                                <p style="margin:0; padding:0; font-size:20px;display: inline-block; color:#fff;">
+                                    {{estacion.departamento}},  {{estacion.nombre}}.</p>
+                            </ion-text>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row style="padding:0;">
+                        <ion-col style="padding:0;" class="ion-text-center">
+                            <img width="35px" src="assets/iconos/termometro2.png" alt="">
+                            <ion-text color="primary" style="display: inline-block;">
+                                <p style="margin:0; padding:0; font-size:60px; display: inline-block">{{(estacion.temperatura)/10}}°</p>
+                                <p style="margin:0; padding:0; font-size:30px;display: inline-block">C</p>
+                            </ion-text>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col style="padding:0;" class="ion-text-center">
+                            <ion-row style="padding:0;">
+                                <ion-col style="padding:0;">
+                                    <img width="14px" src="assets/iconos/viento.png" alt="">
+                                    <ion-text color="primary" style="display: inline-block;">
+                                        <p style="margin:0; font-size:12px;"> Velocidad {{(estacion.velocidadViento)/10}} km/h</p>
+                                    </ion-text>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                </ion-col>
+            </ion-row>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col size="6">
+            <ion-row>
+                <ion-col size="3">
+                    <img width="35px" src="assets/iconos/humedad.png" alt="">
+                </ion-col>
+                <ion-col size="9">
+                    <ion-text>
+                        <p style="margin:0; color:#66686c; ">Humedad ambiente {{(estacion.humedadAmbiente)/10}}%</p>
+                    </ion-text>
+                </ion-col>
+            </ion-row>
+
+        </ion-col>
+        <ion-col size="6">
+            <ion-row>
+                <ion-col size="3">
+                    <img width="35px" src="assets/iconos/suelo.png" alt="">
+                </ion-col>
+                <ion-col size="9">
+                    <ion-text>
+                        <p style="margin:0; color:#66686c; ">Huemedad del suelo {{(estacion.humedadSuelo)/10}}%</p>
+                    </ion-text>
+                </ion-col>
+            </ion-row>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col size="6">
+            <ion-row>
+                <ion-col size="3">
+                    <img width="35px" src="assets/iconos/sol.png" alt="">
+                </ion-col>
+                <ion-col size="9">
+                    <ion-text>
+                        <p style="margin:0; color:#66686c; ">Salidad del sol {{estacion.salidaSol}}</p>
+                    </ion-text>
+                </ion-col>
+            </ion-row>
+
+        </ion-col>
+        <ion-col size="6">
+            <ion-row>
+                <ion-col size="3">
+                    <img width="35px" src="assets/iconos/luna.png" alt="">
+                </ion-col>
+                <ion-col size="9">
+                    <ion-text>
+                        <p style="margin:0; color:#66686c; ">Puesta del sol {{estacion.puestaSol}}</p>
+                    </ion-text>
+                </ion-col>
+            </ion-row>
+        </ion-col>
+    </ion-row>
+</ion-card>
+
+
+</ion-content>

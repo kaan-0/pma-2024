@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar class="fondo-header">
+      <ion-buttons slot="start">
+          <ion-menu-button color="light" menu="menuPrincipal"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+          <ion-label >Estaciones</ion-label>
+      </ion-title>
+      <img slot="end" src="assets/principal.png" height="40px" style="padding-right:5px;" />
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  
+
+<ion-item-group >
+  <!-- <ng-container *ngIf='departamento.estaciones_usuario.length != 0'> -->
+      <!-- <ion-item-divider color="tertiary">
+          <ion-icon name="locate-outline" slot="start"></ion-icon>
+          <ion-label style="font-size: 18px !important;">La Paz</ion-label>
+      </ion-item-divider> -->
+
+      <ion-item detail *ngFor="let estacion of estaciones;let i=index" (click)="estacionId(estacion.id)">
+          <ion-label style="font-size: 15px !important;">{{estacion.nombre}},{{estacion.depto}}</ion-label>
+      </ion-item>
+  <!-- </ng-container> -->
+</ion-item-group>
+
+
+
+</ion-content>
